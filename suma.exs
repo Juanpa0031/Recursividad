@@ -25,7 +25,7 @@ defmodule Finanzas do
   Ejecuta un ejemplo de prueba con una lista fija de transacciones.
   """
   def main do
-    lista = [100, -50, 200, -30]
+    lista = [100, -50, 200, -30, 12]
     IO.puts("Las transacciones son: #{inspect(lista)}")
     IO.puts("El balance final es: #{balance(lista)}")
   end
