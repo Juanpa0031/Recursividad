@@ -19,9 +19,10 @@ defmodule Hotel do
   """
   def main do
     reservas = [
-      %{cliente: "Juan", dias: 3},
-      %{cliente: "Ana", dias: 5},
-      %{cliente: "Luis", dias: 2}
+      %{cliente: "Ana", dias: 3},
+      %{cliente: "Luis", dias: 5},
+      %{cliente: "Marta", dias: 2},
+      %{cliente: "Carlos", dias: 4}
     ]
 
     IO.puts("Reservas: #{inspect(reservas)}")
@@ -30,4 +31,3 @@ defmodule Hotel do
 end
 
 Hotel.main()
-
