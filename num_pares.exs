@@ -1,28 +1,26 @@
 defmodule SumaPares do
   @moduledoc """
-  Módulo para sumar solo los números pares de una lista usando recursividad.
+  Suma únicamente los números pares de una lista usando recursividad de cola.
   """
 
-  @doc """
-  Suma únicamente los números pares de una lista.
-  """
-  def sumar([]), do: 0   # Caso base: lista vacía
+  # Función pública: arranca con acumulador en 0
+  def sumar(lista), do: sumar(lista, 0)
 
-  def sumar([h | t]) do
-    if rem(h, 2) == 0 do
-      # Caso recursivo con número par
-      # - Recursividad Directa
-      # - Recursividad Lineal
-      # - Recursividad No de Cola (la suma ocurre después de la llamada recursiva)
-      h + sumar(t)
-    else
-      # Caso recursivo con número impar
-      # - Recursividad Directa
-      # - Recursividad Lineal
-      # - Recursividad de Cola (la llamada recursiva es la última operación)
-      sumar(t)
-    end
-  end
+  # Caso base: lista vacía
+  defp sumar([], acc), do: acc
+  # - No hay recursividad aquí, se retorna el acumulador
+
+  # Caso recursivo con número par
+  # - Recursividad Directa
+  # - Recursividad Lineal
+  # - Recursividad de Cola (la llamada recursiva es lo último que ocurre)
+  defp sumar([h | t], acc) when rem(h, 2) == 0, do: sumar(t, acc + h)
+
+  # Caso recursivo con número impar
+  # - Recursividad Directa
+  # - Recursividad Lineal
+  # - Recursividad de Cola
+  defp sumar([_h | t], acc), do: sumar(t, acc)
 
   @doc """
   Ejecuta un ejemplo con datos quemados.
@@ -35,4 +33,3 @@ defmodule SumaPares do
 end
 
 SumaPares.main()
-
